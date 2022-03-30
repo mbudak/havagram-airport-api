@@ -22,5 +22,8 @@
     "sqlite3": "^5.0.2",
     "swagger-autogen": "^2.20.5",
     "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
   }
 }
