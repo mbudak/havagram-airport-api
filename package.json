@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "mocha": "^9.2.2"
+  },
+  "config": {
+    "port" : "8000"
   }
 }
