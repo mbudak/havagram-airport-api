@@ -14,7 +14,7 @@ var swaggerOptions = {
     explorer: true
 }
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
 // Swagger
 
 require('./endpoints')(app);
