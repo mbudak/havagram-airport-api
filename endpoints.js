@@ -13,6 +13,29 @@ module.exports = function (app) {
         res.send('Hello API World')
     });
 
+    // Airports
+    app.get('/airports/:id', function (req, res) {
+        let db = new sqlite3.Database('./db/apidatabase.db', sqlite3.OPEN_READONLY, (err) => {
+            if (err) {
+                console.error(err.message);
+            }
+            console.log('connected to SQL db')
+        })
+        
+        db.get(`SELECT * FROM airports WHERE ident = ?`, req.params.id,  (error, rows) => {
+            console.log('rec', rows)
+            res.send(rows);
+        })
+
+        db.close((err) => {
+            if (err) {
+                console.log(err.message)
+            }
+            console.log('db connection closed')
+        })
+    })
+
+
     app.get('/region/:code', function (req, res) {
         
         let db = new sqlite3.Database('./db/apidatabase.db', sqlite3.OPEN_READONLY, (err) => {
@@ -23,7 +46,6 @@ module.exports = function (app) {
         })
         
         db.get(`SELECT id, name FROM regions WHERE code = ?`, req.params.code,  (error, rows) => {
-            console.log('rows', rows);
             res.send(rows);
         })
 
