@@ -13,7 +13,8 @@ module.exports = function (app) {
         res.send('Hello API World')
     });
 
-    app.get('/region', function (req, res) {
+    app.get('/region/:code', function (req, res) {
+        
         let db = new sqlite3.Database('./db/apidatabase.db', sqlite3.OPEN_READONLY, (err) => {
             if (err) {
                 console.error(err.message);
@@ -21,7 +22,7 @@ module.exports = function (app) {
             console.log('connected to SQL db')
         })
         
-        db.get("SELECT id, name FROM regions WHERE code = 'AD-02'", (error, rows) => {
+        db.get(`SELECT id, name FROM regions WHERE code = ?`, req.params.code,  (error, rows) => {
             console.log('rows', rows);
             res.send(rows);
         })
