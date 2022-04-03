@@ -22,7 +22,7 @@ here.
 ...
 
 
-
-
-
-
+## How to run
+<code>
+npm start
+</code>
