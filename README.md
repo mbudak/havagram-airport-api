@@ -26,7 +26,8 @@ here.
 <code>
 npm start
 </code>
-Regenerate documentation
+
+### Regenerate documentation
 <code>
 node swagger.js
 </code>
