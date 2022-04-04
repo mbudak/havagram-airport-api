@@ -2,10 +2,10 @@
   "name": "havagram-airport-api",
   "version": "1.0.0",
   "description": "Airports Data API",
-  "main": "index.js",
+  "main": "app.js",
   "homepage": "https://github.com/mbudak/havagram-airport-api#readme",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon app.js",
     "test": "mocha --recursive test"
   },
   "keywords": [
