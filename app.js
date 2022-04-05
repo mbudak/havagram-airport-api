@@ -17,17 +17,25 @@ var swaggerOptions = {
     explorer: true
 }
 
+// Controllers
+// const apiRoutes = require('./routes/api');
+// const regionController = require('./controllers/regions');
+// app.use('/api', apiRoutes.Router);
+
+// Views
+
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
 
 // Static Files
 app.use(express.static(path.join(__dirname,'public')));
 
+require('./routes/webapp')(app);
+require('./routes/api')(app);
+
+
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
 // Swagger
-
-require('./endpoints')(app);
-
 
 var server = app.listen(8000, function(){
     // var host = server.address().address;

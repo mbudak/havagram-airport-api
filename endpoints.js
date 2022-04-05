@@ -36,6 +36,7 @@ module.exports = function (app) {
     })
 
 
+    /*
     app.get('/region/:code', function (req, res) {
         
         let db = new sqlite3.Database('./db/apidatabase.db', sqlite3.OPEN_READONLY, (err) => {
@@ -56,26 +57,7 @@ module.exports = function (app) {
             console.log('db connection closed')
         })
     })
-
-    app.get('/regions', function (req, res){
-        let db = new sqlite3.Database('./db/apidatabase.db', sqlite3.OPEN_READONLY, (err) => {
-            if (err) {
-                console.error(err.message);
-            }
-            console.log('connected to SQL db')
-        })
-
-        db.serialize(() => {
-            db.each(`SELECT id, Name FROM regions`, (err, row) => {
-                if (err) {
-                    console.log(err.message)
-                }
-                console.log(row.id + `\t` + row.name)
-            })
-        })
-        res.send('Hello Cruel World Here')
-    })
-
+    
     app.get('/search', function (req, res) {
         res.send("mello");
     })
@@ -84,4 +66,5 @@ module.exports = function (app) {
         
         res.send("hobarak : " + req.query.who);
     })
+    */
 }
