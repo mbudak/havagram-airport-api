@@ -1,4 +1,4 @@
-const port = process.env.port || 8000;
+const port = process.env.port || 8080;
 const express   = require('express'),
       ejs       = require('ejs'),
       path      = require('path')
@@ -39,7 +39,7 @@ require('./routes/airportsbycountry')(app);
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
 // Swagger
 
-var server = app.listen(8000, function(){
+var server = app.listen(port, function(){
     // var host = server.address().address;
     var host = "localhost";
     var port = server.address().port;
