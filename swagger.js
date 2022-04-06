@@ -18,10 +18,12 @@ const outputFile = './swagger-output.json';
 
 // API Documentation Files
 const apiFiles = ['./routes/api.js']
+const airportFiles = ['./routes/airport.js']
+
 // const endpointsFiles = ['./endpoints.js'];
 
 /* NOTE: if you use the express Router, you must pass in the 
    'endpointsFiles' only the root file where the route starts,
    such as index.js, app.js, routes.js, ... */
 
-swaggerAutogen(outputFile, [apiFiles], doc);
+swaggerAutogen(outputFile, [apiFiles, airportFiles], doc);

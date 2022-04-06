@@ -32,6 +32,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 require('./routes/webapp')(app);
 require('./routes/api')(app);
+require('./routes/airport')(app);
 
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
