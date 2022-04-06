@@ -2,6 +2,10 @@
 ![node.js CI](https://github.com/mbudak/havagram-airport-api/actions/workflows/node.js.yml/badge.svg)
 
 airport api
+<code>
+32kph60fc6b4e0da23ph7
+</code>
+
 
 ## About Airport API
 Airport API allow end-users a variety of services options for their aviation projects as well as the airport related data such as geography, runways, frequencies and other related data.

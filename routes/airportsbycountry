@@ -1,17 +1,10 @@
-
 module.exports = function (app) {
     const sqlite3 = require('sqlite3').verbose();
     
-    
-    app.get('/api/airport', function (req, res){
-        res.status(200).json({
-            hello: "mello here bb"
-        });
-    });
 
-    /// Airport By Id
-    app.get('/airports/:icao', function (req, res) {
-        const icao = req.params.icao.toUpperCase();
+    /// Airport By Country
+    app.get('/airportsbycountry/:code', function (req, res) {
+        const code = req.params.code.toUpperCase();
 
         let db = new sqlite3.Database('./db/apidatabase.db', sqlite3.OPEN_READONLY, (err) => {
             if (err) {
@@ -19,7 +12,7 @@ module.exports = function (app) {
             }
         })
         
-        db.get(`SELECT * FROM airports WHERE ident = ?`, [icao],  (error, rows) => {
+        db.all(`SELECT id, ident, iso_region, name  FROM airports WHERE iso_country = ?`, [code],  (error, rows) => {
             res.send(rows);
         })
 
