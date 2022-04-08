@@ -19,7 +19,8 @@ const outputFile = './swagger-output.json';
 // API Documentation Files
 const apiFiles = ['./routes/api.js'];
 const airportFiles = ['./routes/airport.js'];
-const airportsByCountry = ['./routes/airportsbycountry'];
+const airportsByCountry = ['./routes/airportsbycountry.js'];
+const byprovince = ['./routes/byprovince.js']
 
 // const endpointsFiles = ['./endpoints.js'];
 
@@ -27,4 +28,9 @@ const airportsByCountry = ['./routes/airportsbycountry'];
    'endpointsFiles' only the root file where the route starts,
    such as index.js, app.js, routes.js, ... */
 
-swaggerAutogen(outputFile, [apiFiles, airportFiles, airportsByCountry], doc);
+swaggerAutogen(outputFile, [
+  apiFiles, 
+  airportFiles, 
+  airportsByCountry,
+  byprovince
+], doc);

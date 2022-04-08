@@ -34,6 +34,7 @@ require('./routes/webapp')(app);
 require('./routes/api')(app);
 require('./routes/airport')(app);
 require('./routes/airportsbycountry')(app);
+require('./routes/byprovince')(app);
 
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOptions))
