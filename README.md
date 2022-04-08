@@ -25,13 +25,19 @@ here.
 ## What can you expect from an Airline API?
 ...
 
+## Installation
+<code>
+    npm install
+</code>
+
+If neccessary to regenerate API Documentation
+<code>
+    node swagger.js
+</code>
+
 
 ## How to run
 <code>
 npm start
 </code>
 
-### Regenerate documentation
-<code>
-node swagger.js
-</code>

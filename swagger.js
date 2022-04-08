@@ -9,7 +9,7 @@ const doc = {
         url : 'https://opensource.org/licenses/MIT'
       }
   },
-  host: 'localhost:8000',
+  host: 'localhost:8080',
   basePath: '/',
   schemes: ['http']
 };
